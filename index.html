@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finstack Solutions - Transforming Services Industry">
+  <title>Finstack Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Adding Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background for entire site */
+      color: white;
+      scroll-behavior: smooth; /* Smooth scroll across the website */
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5); /* Transparent background */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Add dynamic entry animation for the logo */
+    .logo img {
+      width: 210px; /* Adjust as needed */
+      height: auto;
+      margin-right: 20px;
+      animation: logoEntry 2s ease-in-out;
+      transform-origin: center;
+    }
+
+    /* Hover effect to make the logo interactive */
+    .logo img:hover {
+      transform: scale(1.1) rotateY(10deg); /* Slight 3D hover effect */
+      transition: transform 0.5s ease-in-out;
+    }
+
+    /* Entry animation keyframes */
+    @keyframes logoEntry {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("https://i.ibb.co/ryzFt3h/Screenshot-2024-09-11-104439.png") no-repeat center center/cover; /* Corrected URL format */
+  position: relative;
+  perspective: 1000px; /* Add perspective for 3D effect */
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+  transform-style: preserve-3d;
+  animation: zoomEffect 10s infinite; /* Add animation */
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1) rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: scale(1.05) rotateX(10deg) rotateY(10deg); /* Zoom in and slight rotation */
+  }
+  100% {
+    transform: scale(1) rotateX(0) rotateY(0); /* Zoom out */
+  }
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+    /* Hero section styles */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url("https://i.ibb.co/ryzFt3h/Screenshot-2024-09-11-104439.png") no-repeat center center/cover; /* Corrected URL format */
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      margin-bottom:480px;
+    }
+
+    .cta-button {
+      background: #ff6b6b;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: 600;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background: inherit; /* Use the same gradient background for all sections */
+    }
+
+    .service-cards, .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .service-card, .team-member {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover, .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="https://i.ibb.co/D4Np8sB/finstack-logo-fotor-bg-remover-2024080915247.png" alt="finstack-logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transforming Services with Innovation</h1>
+      <p>At Finstack, we are setting a new standard in the Services industry. Experience cutting-edge solutions designed for the future.</p>
+      <button class="cta-button" onclick="scrollToAbout()">Get Started</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-content">
+      <h2>About Finstack Solutions</h2>
+      <p>Founded in 2022, Finstack Solutions is a rising star in the Services Industry. Based in Hyderabad, Telangana, India, we have been transforming how services are delivered with a focus on innovation, efficiency, and technology.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Consulting</h3>
+        <p>We provide expert consulting services to help businesses optimize their workflows and innovate for the future.</p>
+      </div>
+      <div class="service-card">
+        <h3>Technology Solutions</h3>
+        <p>Leverage the latest technology to drive efficiency and results across various industries.</p>
+      </div>
+      <div class="service-card">
+        <h3>Customer Service</h3>
+        <p>Our customer service solutions are designed to keep your customers happy and your business growing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="images/uma.jpg" alt="Uma Devireddy">
+        <h3>Uma Devireddy</h3>
+        <p>Director</p>
+      </div>
+      <div class="team-member">
+        <img src="images/madhavi.jpg" alt="Mamillapalli Madhavi">
+        <h3>Mamillapalli Madhavi</h3>
+        <p>Director</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@finstacksolutions.com</p>
+    <p>Phone: +91-123-456-7890</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Finstack Solutions Pvt. Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function scrollToAbout() {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctaButton = document.querySelector('.cta-button');
+      ctaButton.addEventListener('click', scrollToAbout);
+    });
+  </script>
+
+</body>
+
+</html>
