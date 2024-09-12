@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Finstack Solutions  with a more - Transforming Services Industry">
+  <meta name="description" content="Finstack Solutions - Transforming Services Industry">
   <title>Finstack Solutions</title>
   <link rel="stylesheet" href="styles.css">
   
@@ -36,7 +36,6 @@
       align-items: center;
     }
 
-    /* Add dynamic entry animation for the logo */
     .logo img {
       width: 210px; /* Adjust as needed */
       height: auto;
@@ -45,13 +44,6 @@
       transform-origin: center;
     }
 
-    /* Hover effect to make the logo interactive */
-    .logo img:hover {
-      transform: scale(1.1) rotateY(10deg); /* Slight 3D hover effect */
-      transition: transform 0.5s ease-in-out;
-    }
-
-    /* Entry animation keyframes */
     @keyframes logoEntry {
       0% {
         opacity: 0;
@@ -61,6 +53,11 @@
         opacity: 1;
         transform: scale(1);
       }
+    }
+
+    .logo img:hover {
+      transform: scale(1.1) rotateY(10deg);
+      transition: transform 0.5s ease-in-out;
     }
 
     .nav-links {
@@ -74,75 +71,17 @@
       text-decoration: none;
       font-weight: 500;
     }
-    .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url("https://i.ibb.co/ryzFt3h/Screenshot-2024-09-11-104439.png") no-repeat center center/cover; /* Corrected URL format */
-  position: relative;
-  perspective: 1000px; /* Add perspective for 3D effect */
-  overflow: hidden;
-}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  max-width: 600px;
-  transform-style: preserve-3d;
-  animation: zoomEffect 10s infinite; /* Add animation */
-}
-
-@keyframes zoomEffect {
-  0% {
-    transform: scale(1) rotateX(0) rotateY(0);
-  }
-  50% {
-    transform: scale(1.05) rotateX(10deg) rotateY(10deg); /* Zoom in and slight rotation */
-  }
-  100% {
-    transform: scale(1) rotateX(0) rotateY(0); /* Zoom out */
-  }
-}
-
-.hero h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-    /* Hero section styles */
     .hero {
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: url("https://i.ibb.co/ryzFt3h/Screenshot-2024-09-11-104439.png") no-repeat center center/cover; /* Corrected URL format */
+      background: url("https://i.ibb.co/ryzFt3h/Screenshot-2024-09-11-104439.png") no-repeat center center/cover;
       position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      perspective: 1000px;
+      overflow: hidden;
     }
 
     .hero-content {
@@ -150,13 +89,41 @@
       z-index: 2;
       color: white;
       max-width: 600px;
+      transform-style: preserve-3d;
+      animation: zoomEffect 10s infinite;
+    }
+
+    @keyframes zoomEffect {
+      0% {
+        transform: scale(1) rotateX(0) rotateY(0);
+      }
+      50% {
+        transform: scale(1.05) rotateX(10deg) rotateY(10deg);
+      }
+      100% {
+        transform: scale(1) rotateX(0) rotateY(0);
+      }
     }
 
     .hero h1 {
       font-size: 2rem;
       font-weight: 700;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      margin-bottom:480px;
+      margin-bottom: 470px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .hero p {
+      margin: 0 0 20px;
     }
 
     .cta-button {
@@ -170,6 +137,7 @@
       cursor: pointer;
       box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
+      margin-top: 20px;
     }
 
     .cta-button:hover {
@@ -179,28 +147,43 @@
     section {
       padding: 60px 20px;
       text-align: center;
-      background: inherit; /* Use the same gradient background for all sections */
+      background: inherit;
     }
 
-    .service-cards, .team-members {
+    .service-cards, .team-members, .client-logos {
       display: flex;
       justify-content: center;
       gap: 30px;
       margin-top: 30px;
+      flex-wrap: wrap;
     }
 
-    .service-card, .team-member {
+    .service-card, .team-member, .client-logo {
       background: #fff;
       color: #333;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 58px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: auto;
+    }
+
+    .service-card:hover, .team-member:hover, .client-logo:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .client-logo img {
+      width: 150px;
+      height: auto;
+      display: block;
+      object-fit: contain;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-card:hover, .team-member:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    .client-logo img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     footer {
@@ -209,17 +192,65 @@
       text-align: center;
     }
 
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
     .team-member img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
+
+    /* New styles for animated logo effect */
+    .logo-animated {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: logoAnimation 10s infinite;
+    }
+
+    @keyframes logoAnimation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: hue-rotate(360deg);
+      }
+    }
+    @media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .service-cards, .team-members, .client-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-card, .team-member, .client-logo {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
   </style>
 </head>
 
@@ -233,15 +264,19 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="#clients">Our Clients</a></li>
+      <li><a href="#team">Board members</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="logo-animated">
+      <img src="https://i.ibb.co/D4Np8sB/finstack-logo-fotor-bg-remover-2024080915247.png" alt="finstack-logo">
+    </div>
     <div class="hero-content">
-      <h1>Transforming Services with Innovation </h1>
+      <h1>Transforming Services with Innovation</h1>
       <p>At Finstack, we are setting a new standard in the Services industry. Experience cutting-edge solutions designed for the future.</p>
       <button class="cta-button" onclick="scrollToAbout()">Get Started</button>
     </div>
@@ -264,56 +299,67 @@
         <p>We provide expert consulting services to help businesses optimize their workflows and innovate for the future.</p>
       </div>
       <div class="service-card">
-        <h3>Technology Solutions</h3>
-        <p>Leverage the latest technology to drive efficiency and results across various industries.</p>
+        <h3>Technology Integration</h3>
+        <p>Our team integrates cutting-edge technology solutions to streamline operations and enhance productivity.</p>
       </div>
       <div class="service-card">
-        <h3>Customer Service</h3>
-        <p>Our customer service solutions are designed to keep your customers happy and your business growing.</p>
+        <h3>Support Services</h3>
+        <p>We offer comprehensive support services to ensure your systems run smoothly and efficiently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Clients Section -->
+  <section id="clients">
+    <h2>Our Clients</h2>
+    <div class="client-logos">
+      <div class="client-logo">
+        <img src="https://m.economictimes.com/thumb/msid-99588847,width-1200,height-900,resizemode-4,imgsize-8872/sbi-board-okays-fundraising-of-up-to-2-billion-in-long-term-debt.jpg" alt="Client Logo 1">
+      </div>
+      <div class="client-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Indian_Bank_logo.svg/640px-Indian_Bank_logo.svg.png" alt="Client Logo 2">
+      </div>
+      <div class="client-logo">
+        <img src="data:image/png;base64,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" alt="Client Logo 3">
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section id="team" class="team">
-    <h2>Meet Our Team</h2>
+  <section id="team">
+    <h2>Board Members</h2>
     <div class="team-members">
       <div class="team-member">
-        <img src="images/uma.jpg" alt="Uma Devireddy">
+        <img src="https://via.placeholder.com/100" alt="Team Member 1">
         <h3>Uma Devireddy</h3>
         <p>Director</p>
       </div>
       <div class="team-member">
-        <img src="images/madhavi.jpg" alt="Mamillapalli Madhavi">
-        <h3>Mamillapalli Madhavi</h3>
+        <img src="https://via.placeholder.com/100" alt="Team Member 2">
+        <h3>madhavi mamillapalli</h3>
         <p>Director</p>
       </div>
+     
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@finstacksolutions.com</p>
-    <p>Phone: +91-123-456-7890</p>
+    <p>Have questions or want to get in touch? Drop us a line at <a href="mailto:info@finstack.com">info@finstack.com</a></p>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer>
-    <p>&copy; 2024 Finstack Solutions Pvt. Ltd. All rights reserved.</p>
+    <p>&copy; 2024 Finstack Solutions. All rights reserved.</p>
   </footer>
 
   <script>
     function scrollToAbout() {
       document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
     }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const ctaButton = document.querySelector('.cta-button');
-      ctaButton.addEventListener('click', scrollToAbout);
-    });
   </script>
-
+  
 </body>
 
 </html>
